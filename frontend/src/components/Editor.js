@@ -11,8 +11,6 @@ import {
   UPDATE_FIELD_EDITOR,
 } from "../constants/actionTypes";
 
-const defaultPlaceholderURL = "https://maldo-refactored-parakeet-4jxqqv59p537p57-3001.preview.app.github.dev/placeholder.png"
-
 const mapStateToProps = (state) => ({
   ...state.editor,
 });
@@ -54,7 +52,7 @@ class Editor extends React.Component {
       const item = {
         title: this.props.title,
         description: this.props.description,
-        image: this.props.image || defaultPlaceholderURL,
+        image: this.props.image,
         tagList: this.props.tagList,
       };
 
@@ -122,7 +120,7 @@ class Editor extends React.Component {
                     <input
                       className="form-control"
                       type="text"
-                      placeholder={defaultPlaceholderURL}
+                      placeholder="Image url"
                       value={this.props.image}
                       onChange={this.changeImage}
                     />
