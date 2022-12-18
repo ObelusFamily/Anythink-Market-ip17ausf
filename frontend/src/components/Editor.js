@@ -11,6 +11,8 @@ import {
   UPDATE_FIELD_EDITOR,
 } from "../constants/actionTypes";
 
+const defaultPlaceholderURL = "https://maldo-refactored-parakeet-4jxqqv59p537p57-3001.preview.app.github.dev/placeholder.png"
+
 const mapStateToProps = (state) => ({
   ...state.editor,
 });
@@ -52,7 +54,7 @@ class Editor extends React.Component {
       const item = {
         title: this.props.title,
         description: this.props.description,
-        image: this.props.image,
+        image: this.props.image || defaultPlaceholderURL,
         tagList: this.props.tagList,
       };
 
